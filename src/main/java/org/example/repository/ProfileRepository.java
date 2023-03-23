@@ -7,11 +7,10 @@ import org.springframework.stereotype.Repository;
 import java.sql.*;
 @Repository
 public class ProfileRepository {
-
     public EmployeeEntity searchByPhone(String phone) {
         Connection connection = Database.getConnection();
         try {
-            PreparedStatement statement = connection.prepareStatement("select * from employee where phone=? ;");
+            PreparedStatement statement = connection.prepareStatement("select * from employee where phone=?;");
             statement.setString(1, phone);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {

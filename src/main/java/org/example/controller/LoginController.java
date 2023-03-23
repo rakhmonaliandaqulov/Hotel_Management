@@ -3,13 +3,15 @@ package org.example.controller;
 
 import org.example.service.LoginService;
 import org.example.util.ScannerUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.util.Scanner;
 
 @Controller
 public class LoginController {
-
+     @Autowired
+     private LoginService loginService;
     public void start() {
         boolean b = true;
         while (b) {
@@ -18,10 +20,8 @@ public class LoginController {
                 case 1 -> login();
                 case 2 -> complain();
                 case 0 -> b = false;
-                default -> {
-                    System.out.println("Are you mazgi? Write correctly!");
-                    menu();
-                }
+                default -> System.out.println("Are you mazgi? Write correctly!");
+
             }
         }
     }
@@ -35,8 +35,7 @@ public class LoginController {
         System.out.print("Enter password: ");
         String password = scanner.next();
 
-        LoginService employeeService=new LoginService();
-        employeeService.login(phone,password);
+        loginService.login(phone,password);
 
     }
     private void menu() {

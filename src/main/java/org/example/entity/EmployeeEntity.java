@@ -20,7 +20,7 @@ public class EmployeeEntity {
     private String name;
     @Column(name = "surname")
     private String surname;
-    @Column(name = "phone", length = 13)
+    @Column(name = "phone")
     private String phone;
     @Column(name = "psw")
     private String  psw;
