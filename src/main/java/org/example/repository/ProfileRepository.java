@@ -26,8 +26,6 @@ public class ProfileRepository {
 
                 return new EmployeeEntity(id, name, surname, p_phone, password, c_d.toLocalDateTime(), status, role);
             }
-
-
         } catch (SQLException e) {
             e.printStackTrace();
             System.exit(-1);
@@ -45,13 +43,11 @@ public class ProfileRepository {
 
         return null;
     }
-
     public int addProfileToDb(EmployeeEntity profile) {
-
         Connection connection = Database.getConnection();
         try {
             PreparedStatement statement = connection.prepareStatement(
-                    "insert into profile(name,surname,phone,password,created_date,status,role) " +
+                    "insert into employee(name,surname,phone,psw,date,status,type) " +
                             "values (?,?,?,?,?,?,?)");
             statement.setString(1, profile.getName());
             statement.setString(2, profile.getSurname());
@@ -63,8 +59,6 @@ public class ProfileRepository {
 
             int resultSet = statement.executeUpdate();
             return resultSet;
-
-
         } catch (SQLException e) {
             e.printStackTrace();
             System.exit(-1);
@@ -73,13 +67,11 @@ public class ProfileRepository {
                 if (connection != null) {
                     connection.close();
                 }
-
             } catch (SQLException e) {
                 e.printStackTrace();
                 System.exit(-1);
             }
         }
-
         return 0;
     }
 

@@ -35,7 +35,6 @@ public class Database {
         if (employee1 != null) {
             return;
         }
-
         profileRepository.addProfileToDb(employee);
 
 

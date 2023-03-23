@@ -18,6 +18,9 @@ public class ComplainEntity {
     @ManyToOne
     @JoinColumn(name = "guest_id")
     private GuestsEntity guest_1_id;
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private EmployeeEntity employee_id;
     @Column(name = "status")
     private String status;
 

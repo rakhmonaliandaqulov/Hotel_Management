@@ -1,18 +1,18 @@
 package org.example.controller;
 
 
-import org.example.service.EmployeeService;
+import org.example.service.LoginService;
 import org.example.util.ScannerUtil;
+import org.springframework.stereotype.Controller;
 
 import java.util.Scanner;
 
-public class AuthController {
+@Controller
+public class LoginController {
 
     public void start() {
-
         boolean b = true;
         while (b) {
-
             menu();
             switch (ScannerUtil.getAction()) {
                 case 1 -> login();
@@ -35,7 +35,7 @@ public class AuthController {
         System.out.print("Enter password: ");
         String password = scanner.next();
 
-        EmployeeService employeeService=new EmployeeService();
+        LoginService employeeService=new LoginService();
         employeeService.login(phone,password);
 
     }

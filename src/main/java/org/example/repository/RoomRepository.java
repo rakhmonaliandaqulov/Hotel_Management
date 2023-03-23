@@ -27,7 +27,6 @@ public class RoomRepository {
         factory.close();
         return 0;
     }
-
     public List<RoomEntity> roomList() {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -42,7 +41,6 @@ public class RoomRepository {
         factory.close();
         return roomList;
     }
-
     public int deleteRoom(Integer id) {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -57,7 +55,6 @@ public class RoomRepository {
         factory.close();
         return 1;
     }
-
     public int updateRoom(RoomEntity room) {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -72,7 +69,6 @@ public class RoomRepository {
         factory.close();
         return 1;
     }
-
     public RoomEntity find(Integer id) {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -102,7 +98,6 @@ public class RoomRepository {
         factory.close();
         return 1;
     }
-
     public List<ConvenientEntity> convenientList() {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -117,7 +112,6 @@ public class RoomRepository {
         factory.close();
         return convenientList;
     }
-
     public int deleteConvenient(Integer id) {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -147,7 +141,6 @@ public class RoomRepository {
         factory.close();
         return 1;
     }
-
     public List<EmployeeEntity> employeeList() {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -162,7 +155,6 @@ public class RoomRepository {
         factory.close();
         return convenientList;
     }
-
     public int deleteEmployee(Integer id) {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -177,7 +169,6 @@ public class RoomRepository {
         factory.close();
         return 1;
     }
-
     public void addEmployeeType(EmployeeTypeEntity employeeType) {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -205,7 +196,6 @@ public class RoomRepository {
         session.close();
         factory.close();
     }
-
     public List<GuestsEntity> guestList() {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -234,7 +224,6 @@ public class RoomRepository {
         session.close();
         factory.close();
     }
-
     public List<BookingEntity> bookingList() {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -249,7 +238,6 @@ public class RoomRepository {
         factory.close();
         return convenientList;
     }
-
     public List<BookingEntity> listByRoomId(Integer roomId) {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -264,7 +252,6 @@ public class RoomRepository {
         factory.close();
         return bookingList;
     }
-
     public List<BookingEntity> listByGuestId(Integer guestId) {
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();

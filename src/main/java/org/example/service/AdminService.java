@@ -2,39 +2,37 @@ package org.example.service;
 
 import org.example.entity.*;
 import org.example.repository.RoomRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 public class AdminService {
-    private RoomRepository repository = new RoomRepository();
+    @Autowired
+    private RoomRepository repository;
 
     public void addRoom(RoomEntity room) {
         repository.addRoom(room);
     }
-
     public void roomList() {
         List<RoomEntity> roomLists = repository.roomList();
-        System.out.println("                        ** ROOM LIST **");
+        System.out.println(" ** ROOM LIST **");
         for (RoomEntity room : roomLists) {
             System.out.println(room);
         }
     }
-
     public void deleteRoom(Integer id) {
         int i = repository.deleteRoom(id);
         if (i == 1){
             System.out.print("DELETED SUCCESSFULLY");
         }
     }
-
     public void updateRoom(RoomEntity room) {
         int i = repository.updateRoom(room);
         if (i == 1){
             System.out.print("UPDATE SUCCESSFULLY");
         }
     }
-
     public void find(Integer id) {
         RoomEntity room = repository.find(id);
         if (room != null){
@@ -48,7 +46,6 @@ public class AdminService {
             System.out.print("CONVENIENT ADDED");
         }
     }
-
     public void convenientList() {
         List<ConvenientEntity> convenient = repository.convenientList();
         System.out.print("       ** CONVENIENT LIST **");
@@ -56,7 +53,6 @@ public class AdminService {
             System.out.println(convenient1);
         }
     }
-
     public void deleteConvenient(Integer id) {
         int i = repository.deleteConvenient(id);
         if(i == 1){
@@ -70,18 +66,15 @@ public class AdminService {
             System.out.print("ADDED SUCCESSFULLY");
         }
     }
-
     public void employeeList() {
         List<EmployeeEntity> employeeList = repository.employeeList();
         for (EmployeeEntity employee : employeeList) {
             System.out.println(employee);
         }
     }
-
     public void deleteEmployee(Integer id) {
         repository.deleteEmployee(id);
     }
-
     public void addEmployeeType(EmployeeTypeEntity employeeType) {
         repository.addEmployeeType(employeeType);
     }
@@ -90,7 +83,6 @@ public class AdminService {
         repository.addGuest(guests);
         System.out.println("ADDED SUCCESSFULLY");
     }
-
     public void guestList() {
         List<GuestsEntity> guests = repository.guestList();
         for (GuestsEntity guests1 : guests) {
@@ -102,21 +94,18 @@ public class AdminService {
         repository.addBooking(booking);
         System.out.println("ADDED SUCCESSFULLY");
     }
-
     public void bookingList() {
         List<BookingEntity> bookingList = repository.bookingList();
         for (BookingEntity booking : bookingList) {
             System.out.println(booking);
         }
     }
-
     public void listByRoomId(Integer roomId) {
         List<BookingEntity> bookingList = repository.listByRoomId(roomId);
         for (BookingEntity booking : bookingList) {
             System.out.println(booking);
         }
     }
-
     public void listByGuestId(Integer guestId) {
         List<BookingEntity> bookingList = repository.listByGuestId(guestId);
         for (BookingEntity booking : bookingList) {

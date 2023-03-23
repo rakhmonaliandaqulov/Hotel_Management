@@ -12,8 +12,9 @@
 
         <!-- MAPPINGS -->
         <!-- <mapping class="org.example.entity.StudentEntity" /> -->
+        <mapping class="org.example.controller.LoginController"/>
         <mapping class="org.example.entity.BookingEntity"/>
-        <mapping class="org.example.entity.ClearedRoomEntity"/>
+        <mapping class="org.example.entity.CleanedRoomEntity"/>
         <mapping class="org.example.entity.ComplainEntity"/>
         <mapping class="org.example.entity.EmployeeEntity"/>
         <mapping class="org.example.entity.GuestsEntity"/>
