@@ -1,9 +1,16 @@
 package org.example.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "complain")
+@Getter
+@Setter
+@ToString
 public class ComplainEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,27 +21,4 @@ public class ComplainEntity {
     @Column(name = "status")
     private String status;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public GuestsEntity getGuest_id() {
-        return guest_1_id;
-    }
-
-    public void setGuest_id(GuestsEntity guest_1_id) {
-        this.guest_1_id = guest_1_id;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }

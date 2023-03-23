@@ -12,6 +12,13 @@
 
         <!-- MAPPINGS -->
         <!-- <mapping class="org.example.entity.StudentEntity" /> -->
+        <mapping class="org.example.entity.BookingEntity"/>
+        <mapping class="org.example.entity.ClearedRoomEntity"/>
+        <mapping class="org.example.entity.ComplainEntity"/>
+        <mapping class="org.example.entity.EmployeeEntity"/>
+        <mapping class="org.example.entity.GuestsEntity"/>
+        <mapping class="org.example.entity.OutComeEntity"/>
+        <mapping class="org.example.entity.RoomEntity"/>
     </session-factory>
 
 </hibernate-configuration>

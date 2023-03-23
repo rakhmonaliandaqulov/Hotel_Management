@@ -1,9 +1,16 @@
 package org.example.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "convenient")
+@Getter
+@Setter
+@ToString
 public class ConvenientEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,19 +18,4 @@ public class ConvenientEntity {
     @Column(name = "name")
     private String name;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
